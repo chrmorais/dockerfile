@@ -1,7 +1,9 @@
 #!/bin/sh
-echo "gateway"
+echo "[i] Init MYSQL"
+/mysql-startup.sh
+echo "[i] Starting Gateway"
 cd /app/gateway && nohup /usr/bin/npm start > /dev/null &
-echo "servicemanager"
-cd /app/servicemanager && nohup /usr/bin/npm start > /dev/null &
-echo "webconsole"
-cd /app/webconsole/dist && /usr/bin/npm start &
+echo "[i] Starting ServiceManager"
+cd /app/servicemanager && /usr/bin/npm start
+echo "[i] Starting Webconsole"
+cd /app/webconsole/dist && /usr/bin/npm start
