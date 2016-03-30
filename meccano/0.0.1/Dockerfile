@@ -57,4 +57,4 @@ RUN /mysql-startup.sh
 # Expose ports.
 
 CMD /entrypoint.sh
-EXPOSE 3000 8000 9000
+EXPOSE 9000 3000 8000 
