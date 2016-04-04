@@ -26,7 +26,7 @@ ENV TESTS_ZERO=false
 ENV STATISTICS_SIGMA=6
 
 
-RUN apt-get update && apt-get install -y mysql-server mysql-client curl r-base r-base-dev
+RUN apt-get update && apt-get install -y mysql-server mysql-client curl r-base r-base-dev figlet
 
 WORKDIR /app/
 RUN curl -o gateway-${GATEWAY_VERSION}.tar.gz -sSL  https://github.com/meccano-iot/gateway/releases/download/${GATEWAY_VERSION}/meccano-gateway-${GATEWAY_VERSION}.tar.gz && \
@@ -57,4 +57,4 @@ RUN /mysql-startup.sh
 # Expose ports.
 
 CMD /entrypoint.sh
-EXPOSE 9000 3000 8000 
+EXPOSE 9000 3000 8000
